@@ -41,8 +41,10 @@
     }
   },
   "widgets": [
+    "label",
     "buttons-grid",
     "mpris",
+    "title",
     "dnd",
     "notifications"
   ],
@@ -60,8 +62,9 @@
       "text": " "
     },
     "mpris": {
-      "image-size": 96,
-      "image-radius": 12
+      "image-size": 128,
+      "image-radius": 12,
+      "show-album-art": "left"
     },
     "volume": {
       "label": "󰕾",
@@ -70,7 +73,7 @@
     "buttons-grid": {
       "actions": [
         {
-          "label": "",
+          "label": " ",
           "command": "amixer set Master toggle"
         },
         {

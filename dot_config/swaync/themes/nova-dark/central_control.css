@@ -1,20 +1,20 @@
-@define-color text         @fg;
-@define-color background-alt  alpha(@bg0, .4);
-@define-color selected        @blue;
+@define-color text            @foreground;
+@define-color background-alt  alpha(@color1, .4);
+@define-color selected        #61afef; /*@color6; */
 @define-color hover           alpha(@selected, .4);
-@define-color urgent          @red;
-@define-color background      @bg0;
+@define-color urgent          @color2;
 
 * {
   color:            @text;
+
   all: unset;
   font-size: 14px;
-  font-family: "Adwaita Sans", "Arimo 
-  Nerd Font Regular";
+  font-family: "JetBrains Mono Nerd Font 10";
   transition: 200ms;
+
 }
 
-/* Avoid 'annoying' background */
+/* Avoid 'annoying' backgroud */
 .blank-window {  
   background: transparent;  
 }
@@ -22,10 +22,9 @@
 /* CONTROL CENTER ------------------------------------------------------------------------ */
 
 .control-center {
-  /* Reduced alpha to 0.6 to allow blur to show through */
-  background: alpha(@background, 0.6); 
+  background: alpha(@background, .55);
   border-radius: 24px;
-  border: 1px solid @selected;
+  border: 2px solid @selected;
   box-shadow: 0 0 10px 0 rgba(0,0,0,.6);
   margin: 18px;
   padding: 12px;
@@ -209,8 +208,9 @@ progressbar {
     margin:  20px 6px;
 }
 
+  /* NOTE: Background need *opacity 1* otherwise will turn into the album art blurred  */
 .widget-mpris-player {
-    background-color: alpha(@background, 0.4);
+    background-color: @background-alt;
     border-radius: 22px;
     padding: 6px 14px;
     margin: 6px;
@@ -231,6 +231,11 @@ progressbar {
 
 .widget-mpris-album-art {
   border-radius: 16px;
+  box-shadow: none;
+}
+
+picture.mpris-background {
+  opacity: 0;
 }
  
 .widget-mpris-title {
@@ -245,9 +250,13 @@ progressbar {
 
 /* Volume */
 .widget-volume {
-  background: alpha(@background, 0.4);
-  color: @selected;
+  background: @background-sec;
+  color: @background;
   padding: 4px;
   margin: 6px;
   border-radius: 6px;
 }
+
+
+
+
