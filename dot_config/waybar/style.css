@@ -3,12 +3,9 @@
 * {
     border: none;
     border-radius: 0px;
-    
-    /* Ensure these fonts are installed on your Arch system */
     font-family: "Adwaita Sans", "0xProto Nerd Font", "sans-serif";
     font-size: 13px;
     font-weight: bold;
-
     min-height: 0;
     padding: 0;
     margin: 0;
@@ -48,10 +45,9 @@ tooltip label {
 }
 
 #workspaces button.active {
-    background-color: @blue; /* Fixed typo here */
+    background-color: @blue; 
     color: @bg0;
     min-width: 50px;
-    transition: all 0.3s ease-in-out;
 }
 
 #workspaces button:hover {
@@ -66,13 +62,11 @@ tooltip label {
     color: @bg0;
     border-radius: 16px;
     min-width: 50px;
-    transition: all 0.3s ease-in-out;
 }
 
-/* Individual Module Styling */
+/* Individual modules (excluding network/tray which are now in a group) */
 #battery,
 #pulseaudio,
-#network,
 #clock,
 #custom-notification {
     background-color: @bg0;
@@ -82,7 +76,25 @@ tooltip label {
     border: 1px solid @bg1;
 }
 
-/* Specific Colors for Modules */
+#network {
+    background-color: @bg0;
+    color: @purple;
+    border: 1px solid @bg1;
+    border-right: none;             /* Remove the right border */
+    border-radius: 50px 0 0 50px;   /* Round only the left side */
+    padding: 0 5px 0 15px;          /* Less padding on the right */
+    margin: 0 0 0 12px;             /* Keep left margin for spacing from Pulseaudio */
+}
+
+#tray {
+    background-color: @bg0;
+    border: 1px solid @bg1;
+    border-left: none;              /* Remove the left border */
+    border-radius: 0 50px 50px 0;   /* Round only the right side */
+    padding: 0 12px 0 0;          /* Less padding on the left */
+    margin: 0;                      /* NO left margin so it touches network */
+}
+
 #clock {
     color: @blue;
 }
@@ -96,15 +108,10 @@ tooltip label {
     color: @yellow;
 }
 
-#network {
-    color: @purple;
-}
-
 #battery {
     color: @green;
 }
 
-/* Optional: Add a right margin to the last module so it's not touching the screen edge */
-#clock {
-    margin-right: 12px;
+#custom-power {
+    font-size: 20px;
 }
