@@ -4,7 +4,7 @@
   "positionY": "top",
 	"cssPriority": "user",
 
-  "control-center-width": 380,
+  "control-center-width": 320,
   "control-center-height": 760, 
   "control-center-margin-top": 2,
   "control-center-margin-bottom": 2,
@@ -73,7 +73,7 @@
     "buttons-grid": {
       "actions": [
         {
-          "label": " ",
+          "label": "",
           "command": "amixer set Master toggle"
         },
         {
