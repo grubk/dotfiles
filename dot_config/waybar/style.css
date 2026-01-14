@@ -3,7 +3,7 @@
 * {
     border: none;
     border-radius: 0px;
-    font-family: "Adwaita Sans", "0xProto Nerd Font", "sans-serif";
+    font-family: "Adwaita Sans", "0xProto Nerd Font Propo";
     font-size: 13px;
     font-weight: bold;
     min-height: 0;
@@ -27,7 +27,7 @@ tooltip label {
 }
 
 #workspaces {
-    background-color: @bg0;
+    background-color: alpha(@bg0, 0.5);
     padding: 5px 3px;
     margin: 0 0 0 12px;
     border-radius: 18px;
@@ -40,7 +40,7 @@ tooltip label {
     margin: 0px 3px;
     border-radius: 45px;
     color: transparent;
-    background-color: @bg1;
+    background-color: alpha(@bg1, 0.5);
     transition: all 0.3s ease-in-out;
 }
 
@@ -51,7 +51,7 @@ tooltip label {
 }
 
 #workspaces button:hover {
-    background-color: @purple;
+    background-color: @fg;
     color: @bg0;
     border-radius: 16px;
     min-width: 50px;
@@ -68,8 +68,9 @@ tooltip label {
 #battery,
 #pulseaudio,
 #clock,
-#custom-notification {
-    background-color: @bg0;
+#custom-notification, 
+#custom-power {
+    background-color: alpha(@bg0, 0.5);
     padding: 0 15px;
     margin: 0 0 0 12px;
     border-radius: 50px;
@@ -77,8 +78,8 @@ tooltip label {
 }
 
 #network {
-    background-color: @bg0;
-    color: @purple;
+    background-color: alpha(@bg0, 0.5);
+    color: @yellow;
     border: 1px solid @bg1;
     border-right: none;             /* Remove the right border */
     border-radius: 50px 0 0 50px;   /* Round only the left side */
@@ -87,7 +88,7 @@ tooltip label {
 }
 
 #tray {
-    background-color: @bg0;
+    background-color: alpha(@bg0, 0.5);
     border: 1px solid @bg1;
     border-left: none;              /* Remove the left border */
     border-radius: 0 50px 50px 0;   /* Round only the right side */
@@ -105,13 +106,14 @@ tooltip label {
 }
 
 #pulseaudio {
-    color: @yellow;
+    color: @green;
 }
 
 #battery {
-    color: @green;
+    color: @blue;
 }
 
 #custom-power {
     font-size: 20px;
+    margin: 0 1px 0 0;
 }
